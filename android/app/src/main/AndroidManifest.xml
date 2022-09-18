@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.recipe_book_figma">
+    package="com.example.omega_intership">
    <application
-        android:label="recipe_book_figma"
+        android:label="omega_intership"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
