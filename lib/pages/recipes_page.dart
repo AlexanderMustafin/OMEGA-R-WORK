@@ -12,106 +12,117 @@ class RecipesPage extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Divider(
-              height: 5,
-              indent: 60,
-              endIndent: 60,
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Recipes',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 24,
-                  fontFamily: 'Montserrat',
+        title: Container(
+          margin: const EdgeInsets.only(left: 228),
+          width: 1440,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Divider(
+                height: 5,
+                indent: 60,
+                endIndent: 60,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Recipes',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 24,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 40,
-              endIndent: 40,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/main');
-              },
-              child: const Text(
-                'Главная',
-                style: TextStyle(
-                  color: Color(0xff9196A1),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 40,
+                endIndent: 40,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/main');
+                },
+                child: const Text(
+                  'Главная',
+                  style: TextStyle(
+                    color: Color(0xff9196A1),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Рецепты',
-                style: TextStyle(
-                  color: Color(0xff3A3C41),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Рецепты',
+                  style: TextStyle(
+                    color: Color(0xff3A3C41),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/favorite');
-              },
-              child: const Text(
-                'Избранное',
-                style: TextStyle(
-                  color: Color(0xff9196A1),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/favorite');
+                },
+                child: const Text(
+                  'Избранное',
+                  style: TextStyle(
+                    color: Color(0xff9196A1),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.account_circle,
-                color: Colors.orange,
-                size: 38,
-              ),
-              label: const Text(
-                'Привет, Татьяна    |',
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
-                ),
-              ),
+            padding: const EdgeInsets.only(
+              right: 350,
+              top: 6,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 120),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.logout_outlined),
-              color: Colors.black45,
+            child: Row(
+              children: [
+                TextButton.icon(
+                  onPressed: () async {
+                    await Navigator.pushReplacementNamed(
+                        context, '/profile_page');
+                  },
+                  icon: const Icon(
+                    Icons.account_circle,
+                    color: Colors.orange,
+                    size: 38,
+                  ),
+                  label: const Text(
+                    'Привет, Татьяна    |',
+                    style: TextStyle(
+                      color: Colors.orange,
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.logout_outlined),
+                  color: Colors.black45,
+                ),
+              ],
             ),
           ),
         ],
@@ -153,24 +164,27 @@ class RecipesPage extends StatelessWidget {
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Divider(
+                            children: [
+                              const Divider(
                                 indent: 20,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.add,
                                 color: Colors.white,
                               ),
-                              Divider(
+                              const Divider(
                                 endIndent: 23,
                               ),
-                              Text(
-                                'Добавить рецепт',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w600,
+                              TextButton(
+                                onPressed: () async {},
+                                child: const Text(
+                                  'Добавить рецепт',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ),
                             ],
@@ -192,19 +206,19 @@ class RecipesPage extends StatelessWidget {
                 children: const [
                   SmallTableWidget(
                     text1: 'Простые блюда',
-                    iconString: 'images/ic_menu.png',
+                    iconString: 'image/ic_menu.png',
                   ),
                   SmallTableWidget(
                     text1: 'Детское',
-                    iconString: 'images/pan_menu.png',
+                    iconString: 'image/pan_menu.png',
                   ),
                   SmallTableWidget(
                     text1: 'От шеф-поваров',
-                    iconString: 'images/hat_menu.png',
+                    iconString: 'image/hat_menu.png',
                   ),
                   SmallTableWidget(
                     text1: 'На праздник',
-                    iconString: 'images/party_menu.png',
+                    iconString: 'image/party_menu.png',
                   ),
                 ],
               ),
@@ -361,7 +375,7 @@ class RecipesPage extends StatelessWidget {
               recipeType1: 'десерты',
               recipeType2: 'клубника',
               recipeType3: 'сливки',
-              photoString: 'images/panna_kotta.png',
+              photoString: 'image/panna_kotta.png',
               favoriteRating: '10',
               likeRating: '8',
               peopleNumber: '5 персон',
@@ -371,8 +385,8 @@ class RecipesPage extends StatelessWidget {
                   ' свежими ягодами и мятой.',
               recipeName: 'Клубничная панна-котта',
               timeRequired: '35 мин',
-              favoriteIconsString: 'images/filled_star.png',
-              likeIconString: 'images/heart.png',
+              favoriteIconsString: 'image/filled_star.png',
+              likeIconString: 'image/heart.png',
               routeString: '/recipe_panna_kotta',
             ),
             const SizedBox(
@@ -382,7 +396,7 @@ class RecipesPage extends StatelessWidget {
               recipeType1: 'вторые блюда',
               recipeType2: 'мясо',
               recipeType3: 'соевый соус',
-              photoString: 'images/meatballs.png',
+              photoString: 'image/meatballs.png',
               favoriteRating: '4',
               likeRating: '7',
               peopleNumber: '4 персоны',
@@ -391,8 +405,8 @@ class RecipesPage extends StatelessWidget {
                   ' которым можно порадовать своих близких. ',
               recipeName: 'Мясные фрикадельки',
               timeRequired: '90 мин',
-              favoriteIconsString: 'images/star.png',
-              likeIconString: 'images/heart.png',
+              favoriteIconsString: 'image/star.png',
+              likeIconString: 'image/heart.png',
               routeString: '/recipe',
             ),
             const SizedBox(
@@ -402,7 +416,7 @@ class RecipesPage extends StatelessWidget {
               recipeType1: 'десерты',
               recipeType2: 'завтрак',
               recipeType3: 'блины',
-              photoString: 'images/pancakes.png',
+              photoString: 'image/pancakes.png',
               favoriteRating: '25',
               likeRating: '7',
               peopleNumber: '3 персоны',
@@ -411,8 +425,8 @@ class RecipesPage extends StatelessWidget {
                   ' оно должно быть воздушным, чтобы панкейки не растекались по сковородке...',
               recipeName: 'Панкейки',
               timeRequired: '40 мин',
-              favoriteIconsString: 'images/filled_star.png',
-              likeIconString: 'images/filled_heart.png',
+              favoriteIconsString: 'image/filled_star.png',
+              likeIconString: 'image/filled_heart.png',
               routeString: './recipe',
             ),
             const SizedBox(
@@ -422,7 +436,7 @@ class RecipesPage extends StatelessWidget {
               recipeType1: 'десерты',
               recipeType2: 'вишня',
               recipeType3: 'мороженое',
-              photoString: 'images/icecream.png',
+              photoString: 'image/icecream.png',
               favoriteRating: '4',
               likeRating: '7',
               peopleNumber: '2 персоны',
@@ -431,8 +445,8 @@ class RecipesPage extends StatelessWidget {
                   ' что будет особенно актуально для сладкоежек, соблюдающих диету.',
               recipeName: 'Полезное мороженое без сахара',
               timeRequired: '35 мин',
-              favoriteIconsString: 'images/star.png',
-              likeIconString: 'images/heart.png',
+              favoriteIconsString: 'image/star.png',
+              likeIconString: 'image/heart.png',
               routeString: '/recipe',
             ),
             const SizedBox(
@@ -842,7 +856,7 @@ class RecipeTable extends StatelessWidget {
                   Row(
                     children: [
                       Image.asset(
-                        'images/time.png',
+                        'image/time.png',
                         width: 48,
                         height: 56,
                       ),
@@ -880,7 +894,7 @@ class RecipeTable extends StatelessWidget {
                         child: Row(
                           children: [
                             Image.asset(
-                              'images/person.png',
+                              'image/person.png',
                               width: 59,
                               height: 38,
                               color: const Color.fromRGBO(253, 177, 0, 0.5),

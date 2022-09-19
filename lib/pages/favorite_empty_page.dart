@@ -12,108 +12,119 @@ class FavoriteEmptyPage extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Divider(
-              height: 5,
-              indent: 60,
-              endIndent: 60,
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Recipes',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 24,
-                  fontFamily: 'Montserrat',
+        title: Container(
+          margin: const EdgeInsets.only(left: 228),
+          width: 1440,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Divider(
+                height: 5,
+                indent: 60,
+                endIndent: 60,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Recipes',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 24,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 40,
-              endIndent: 40,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/main');
-              },
-              child: const Text(
-                'Главная',
-                style: TextStyle(
-                  color: Color(0xff9196A1),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 40,
+                endIndent: 40,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/main');
+                },
+                child: const Text(
+                  'Главная',
+                  style: TextStyle(
+                    color: Color(0xff9196A1),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/recipes');
-              },
-              child: const Text(
-                'Рецепты',
-                style: TextStyle(
-                  color: Color(0xff9196A1),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/recipes');
+                },
+                child: const Text(
+                  'Рецепты',
+                  style: TextStyle(
+                    color: Color(0xff9196A1),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/favorite');
-              },
-              child: const Text(
-                'Избранное',
-                style: TextStyle(
-                  color: Color(0xff3A3C41),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/favorite');
+                },
+                child: const Text(
+                  'Избранное',
+                  style: TextStyle(
+                    color: Color(0xff3A3C41),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.account_circle,
-                color: Colors.orange,
-                size: 38,
-              ),
-              label: const Text(
-                'Привет, Татьяна    |',
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
-                ),
-              ),
+            padding: const EdgeInsets.only(
+              right: 350,
+              top: 6,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 120),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.logout_outlined),
-              color: Colors.black45,
+            child: Row(
+              children: [
+                TextButton.icon(
+                  onPressed: () async {
+                    await Navigator.pushReplacementNamed(
+                        context, '/profile_page');
+                  },
+                  icon: const Icon(
+                    Icons.account_circle,
+                    color: Colors.orange,
+                    size: 38,
+                  ),
+                  label: const Text(
+                    'Привет, Татьяна    |',
+                    style: TextStyle(
+                      color: Colors.orange,
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.logout_outlined),
+                  color: Colors.black45,
+                ),
+              ],
             ),
           ),
         ],
@@ -157,7 +168,9 @@ class FavoriteEmptyPage extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                const SizedBox(height: 888,),
+                const SizedBox(
+                  height: 888,
+                ),
                 UnconstrainedBox(
                   alignment: Alignment.bottomCenter,
                   child: Container(
@@ -167,22 +180,30 @@ class FavoriteEmptyPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        SizedBox(width: 120,),
-                        Text('Recipes',
+                        SizedBox(
+                          width: 120,
+                        ),
+                        Text(
+                          'Recipes',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 32,
                             color: Color(0xffFDB100),
                             fontFamily: 'Montserrat',
-                          ),),
-                        SizedBox(width: 918,),
-                        Text('© Recipes 2021',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 918,
+                        ),
+                        Text(
+                          '© Recipes 2021',
                           style: TextStyle(
                             color: Color(0xff4A525A),
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'Montserrat,',
-                          ),),
+                          ),
+                        ),
                       ],
                     ),
                   ),

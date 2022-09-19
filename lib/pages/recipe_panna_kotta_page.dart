@@ -12,106 +12,117 @@ class PannaKottaPage extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Divider(
-              height: 5,
-              indent: 60,
-              endIndent: 60,
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Recipes',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 24,
-                  fontFamily: 'Montserrat',
+        title: Container(
+          margin: const EdgeInsets.only(left: 228),
+          width: 1440,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Divider(
+                height: 5,
+                indent: 60,
+                endIndent: 60,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Recipes',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 24,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 40,
-              endIndent: 40,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/main');
-              },
-              child: const Text(
-                'Главная',
-                style: TextStyle(
-                  color: Color(0xff9196A1),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 40,
+                endIndent: 40,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/main');
+                },
+                child: const Text(
+                  'Главная',
+                  style: TextStyle(
+                    color: Color(0xff9196A1),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Рецепты',
-                style: TextStyle(
-                  color: Color(0xff3A3C41),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Рецепты',
+                  style: TextStyle(
+                    color: Color(0xff3A3C41),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-            const Divider(
-              height: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-            TextButton(
-              onPressed: () async {
-                await Navigator.pushReplacementNamed(context, '/favorite');
-              },
-              child: const Text(
-                'Избранное',
-                style: TextStyle(
-                  color: Color(0xff9196A1),
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
+              const Divider(
+                height: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Navigator.pushReplacementNamed(context, '/favorite');
+                },
+                child: const Text(
+                  'Избранное',
+                  style: TextStyle(
+                    color: Color(0xff9196A1),
+                    fontSize: 18,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.account_circle,
-                color: Colors.orange,
-                size: 38,
-              ),
-              label: const Text(
-                'Привет, Татьяна    |',
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
-                ),
-              ),
+            padding: const EdgeInsets.only(
+              right: 350,
+              top: 6,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 120),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.logout_outlined),
-              color: Colors.black45,
+            child: Row(
+              children: [
+                TextButton.icon(
+                  onPressed: () async {
+                    await Navigator.pushReplacementNamed(
+                        context, '/profile_page');
+                  },
+                  icon: const Icon(
+                    Icons.account_circle,
+                    color: Colors.orange,
+                    size: 38,
+                  ),
+                  label: const Text(
+                    'Привет, Татьяна    |',
+                    style: TextStyle(
+                      color: Colors.orange,
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.logout_outlined),
+                  color: Colors.black45,
+                ),
+              ],
             ),
           ),
         ],
@@ -129,8 +140,11 @@ class PannaKottaPage extends StatelessWidget {
                 SizedBox(
                   width: 1200,
                   child: TextButton.icon(
-                    icon: const Icon(Icons.arrow_back,
-                        color: Color(0xffFDB100), size: 18,),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xffFDB100),
+                      size: 18,
+                    ),
                     onPressed: () async {
                       await Navigator.pushReplacementNamed(context, '/recipes');
                     },
@@ -148,98 +162,133 @@ class PannaKottaPage extends StatelessWidget {
                 const SizedBox(
                   height: 11,
                 ),
-                const RecipeTableOpened(recipeName: 'Клубничная Панна-Котта',
-                    recipeDescription: 'Десерт, который невероятно легко и быстро готовится.'
-                        ' Советую подавать его порционно в красивых бокалах,'
-                        ' украсив взбитыми сливками, свежими ягодами и мятой.',
-                    recipeType1: 'десерты',
-                    recipeType2: 'клубника',
-                    recipeType3: 'сливки',
-                    favoriteRating: '10',
-                    favoriteIconsString: 'images/filled_star.png',
-                    likeRating: '8',
-                    likeIconString: 'images/heart.png',
-                    peopleNumber: '5 персон',
-                    timeRequired: '35 мин',
-                    photoString: 'images/panna_kotta.png',),
-                const SizedBox(height: 40,),
+                const RecipeTableOpened(
+                  recipeName: 'Клубничная Панна-Котта',
+                  recipeDescription:
+                      'Десерт, который невероятно легко и быстро готовится.'
+                      ' Советую подавать его порционно в красивых бокалах,'
+                      ' украсив взбитыми сливками, свежими ягодами и мятой.',
+                  recipeType1: 'десерты',
+                  recipeType2: 'клубника',
+                  recipeType3: 'сливки',
+                  favoriteRating: '10',
+                  favoriteIconsString: 'image/filled_star.png',
+                  likeRating: '8',
+                  likeIconString: 'image/heart.png',
+                  peopleNumber: '5 персон',
+                  timeRequired: '35 мин',
+                  photoString: 'image/panna_kotta.png',
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
                 Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                         IngredientsColumn(boldText1: 'Для панна котты',
-                            boldText2: 'Для клубничного желе',
-                            contentText11: 'Сливки-20-30% - 500мл.',
-                            contentText12: 'Молоко - 100мл.',
-                            contentText13: 'Желатин - 2 ч.л.',
-                            contentText14: 'Сахар - 3 ст.л.',
-                            contentText15: 'Ванильный сахар - 2 ч.л.',
-                            contentText21: 'Сливки-20-30% - 500мл.',
-                            contentText22: 'Молоко - 100 мл.',
-                            contentText23: 'Желатин - 2 ч.л.',
-                            contentText24: 'Сахар - 3 ст.л.',
-                            contentText25: 'Ванильный сахар - 2 ч.л.',),
+                        IngredientsColumn(
+                          boldText1: 'Для панна котты',
+                          boldText2: 'Для клубничного желе',
+                          contentText11: 'Сливки-20-30% - 500мл.',
+                          contentText12: 'Молоко - 100мл.',
+                          contentText13: 'Желатин - 2 ч.л.',
+                          contentText14: 'Сахар - 3 ст.л.',
+                          contentText15: 'Ванильный сахар - 2 ч.л.',
+                          contentText21: 'Сливки-20-30% - 500мл.',
+                          contentText22: 'Молоко - 100 мл.',
+                          contentText23: 'Желатин - 2 ч.л.',
+                          contentText24: 'Сахар - 3 ст.л.',
+                          contentText25: 'Ванильный сахар - 2 ч.л.',
+                        ),
                       ],
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:  [
-                        const StepWidget(stepNumber: 'Шаг 1',
-                            stepDescription: 'Приготовим панна котту: '
-                                'Зальем желатин молоком и поставим на 30 минут для набухания. '
-                                'В сливки добавим сахар и ванильный сахар.'
-                                ' Доводим до кипения (не кипятим!).',),
-                        const SizedBox(height: 20,),
-                        const StepWidget(stepNumber: 'Шаг 2',
-                            stepDescription: 'Добавим в сливки набухший в молоке желатин.'
-                                ' Перемешаем до полного растворения. Огонь отключаем.'
-                                ' Охладим до комнатной температуры.',),
-                        const SizedBox(height: 20,),
-                        const StepWidget(stepNumber: 'Шаг 3',
-                            stepDescription: 'Разольем охлажденные сливки по'
-                                ' креманкам и поставим в холодильник до полного '
-                                'застывания. Это около 3-5 часов.',),
-                        const SizedBox(height: 20,),
-                        const StepWidget(stepNumber: 'Шаг 4',
-                            stepDescription: 'Приготовим клубничное желе: '
-                                'Клубнику помоем, очистим от плодоножек.'
-                                ' Добавим сахар. Взбиваем клубнику с помощью'
-                                ' блендера в пюре.',),
-                        const SizedBox(height: 20,),
-                        const StepWidget(stepNumber: 'Шаг 5',
-                            stepDescription: 'Добавим в миску с желатином '
-                                '2ст.ложки холодной воды и сок лимона. '
-                                'Перемешаем и поставим на 30 минут для набухания.'
-                                ' Доведем клубничное пюре до кипения. Добавим '
-                                'набухший желатин, перемешаем до полного растворения.'
-                                ' Огонь отключаем. Охладим до комнатной температуры.',),
-                        const SizedBox(height: 20,),
-                        const StepWidget(stepNumber: 'Шаг 6',
-                            stepDescription: 'Сверху на застывшие сливки добавим'
-                                ' охлажденное клубничное желе. Поставим в '
-                                'холодильник до полного застывания клубничного'
-                                ' желе. Готовую панна коту подаем с фруктами.',),
-                        const SizedBox(height: 40,),
+                      children: [
+                        const StepWidget(
+                          stepNumber: 'Шаг 1',
+                          stepDescription: 'Приготовим панна котту: '
+                              'Зальем желатин молоком и поставим на 30 минут для набухания. '
+                              'В сливки добавим сахар и ванильный сахар.'
+                              ' Доводим до кипения (не кипятим!).',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const StepWidget(
+                          stepNumber: 'Шаг 2',
+                          stepDescription:
+                              'Добавим в сливки набухший в молоке желатин.'
+                              ' Перемешаем до полного растворения. Огонь отключаем.'
+                              ' Охладим до комнатной температуры.',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const StepWidget(
+                          stepNumber: 'Шаг 3',
+                          stepDescription: 'Разольем охлажденные сливки по'
+                              ' креманкам и поставим в холодильник до полного '
+                              'застывания. Это около 3-5 часов.',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const StepWidget(
+                          stepNumber: 'Шаг 4',
+                          stepDescription: 'Приготовим клубничное желе: '
+                              'Клубнику помоем, очистим от плодоножек.'
+                              ' Добавим сахар. Взбиваем клубнику с помощью'
+                              ' блендера в пюре.',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const StepWidget(
+                          stepNumber: 'Шаг 5',
+                          stepDescription: 'Добавим в миску с желатином '
+                              '2ст.ложки холодной воды и сок лимона. '
+                              'Перемешаем и поставим на 30 минут для набухания.'
+                              ' Доведем клубничное пюре до кипения. Добавим '
+                              'набухший желатин, перемешаем до полного растворения.'
+                              ' Огонь отключаем. Охладим до комнатной температуры.',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const StepWidget(
+                          stepNumber: 'Шаг 6',
+                          stepDescription: 'Сверху на застывшие сливки добавим'
+                              ' охлажденное клубничное желе. Поставим в '
+                              'холодильник до полного застывания клубничного'
+                              ' желе. Готовую панна коту подаем с фруктами.',
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text('Приятного аппетита!',
+                            Text(
+                              'Приятного аппетита!',
                               style: TextStyle(
                                 color: Color(0xffFDB100),
                                 fontSize: 24,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: 'Montserrat',
-                              ),)
+                              ),
+                            )
                           ],
                         )
-
                       ],
                     )
                   ],
                 ),
-                const SizedBox(height: 103,),
+                const SizedBox(
+                  height: 103,
+                ),
                 UnconstrainedBox(
                   alignment: Alignment.bottomCenter,
                   child: Container(
@@ -249,22 +298,30 @@ class PannaKottaPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        SizedBox(width: 120,),
-                        Text('Recipes',
+                        SizedBox(
+                          width: 120,
+                        ),
+                        Text(
+                          'Recipes',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 32,
                             color: Color(0xffFDB100),
                             fontFamily: 'Montserrat',
-                          ),),
-                        SizedBox(width: 918,),
-                        Text('© Recipes 2021',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 918,
+                        ),
+                        Text(
+                          '© Recipes 2021',
                           style: TextStyle(
                             color: Color(0xff4A525A),
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'Montserrat,',
-                          ),),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -343,8 +400,10 @@ class RecipeTableOpened extends StatelessWidget {
                 child: OutlinedButton(
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
-                      side: const BorderSide(
-                          color: Color.fromRGBO(158, 163, 172, 0.7),),),
+                    side: const BorderSide(
+                      color: Color.fromRGBO(158, 163, 172, 0.7),
+                    ),
+                  ),
                   child: const Icon(
                     Icons.delete,
                     size: 18,
@@ -388,7 +447,6 @@ class RecipeTableOpened extends StatelessWidget {
               )
             ],
           ),
-
           Row(
             children: [
               SizedBox(
@@ -596,7 +654,7 @@ class RecipeTableOpened extends StatelessWidget {
                     Row(
                       children: [
                         Image.asset(
-                          'images/time.png',
+                          'image/time.png',
                           width: 48,
                           height: 56,
                         ),
@@ -634,7 +692,7 @@ class RecipeTableOpened extends StatelessWidget {
                           child: Row(
                             children: [
                               Image.asset(
-                                'images/person.png',
+                                'image/person.png',
                                 width: 59,
                                 height: 38,
                                 color: const Color.fromRGBO(253, 177, 0, 0.5),
@@ -682,20 +740,21 @@ class RecipeTableOpened extends StatelessWidget {
 }
 
 class IngredientsColumn extends StatelessWidget {
-  const IngredientsColumn(
-      {required this.boldText1,
-      required this.boldText2,
-      required this.contentText11,
-      required this.contentText12,
-      required this.contentText13,
-      required this.contentText14,
-      required this.contentText15,
-      required this.contentText21,
-      required this.contentText22,
-      required this.contentText23,
-      required this.contentText24,
-      required this.contentText25,
-      super.key,});
+  const IngredientsColumn({
+    required this.boldText1,
+    required this.boldText2,
+    required this.contentText11,
+    required this.contentText12,
+    required this.contentText13,
+    required this.contentText14,
+    required this.contentText15,
+    required this.contentText21,
+    required this.contentText22,
+    required this.contentText23,
+    required this.contentText24,
+    required this.contentText25,
+    super.key,
+  });
   final String boldText1;
   final String contentText11;
   final String contentText12;
@@ -815,10 +874,11 @@ class IngredientsColumn extends StatelessWidget {
 }
 
 class StepWidget extends StatelessWidget {
-  const StepWidget(
-      {required this.stepNumber,
-        required this.stepDescription,
-        super.key,});
+  const StepWidget({
+    required this.stepNumber,
+    required this.stepDescription,
+    super.key,
+  });
 
   final String stepNumber;
   final String stepDescription;
@@ -828,26 +888,38 @@ class StepWidget extends StatelessWidget {
       width: 790,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-      border: Border.all(color: Colors.black45),),
-      padding: const EdgeInsets.fromLTRB(73, 50, 74, 47,),
+        border: Border.all(color: Colors.black45),
+      ),
+      padding: const EdgeInsets.fromLTRB(
+        73,
+        50,
+        74,
+        47,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(stepNumber,
-          style: const TextStyle(
-            color: Color(0xff4A525A),
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            fontFamily: 'Montserrat',
-          ),),
-          const SizedBox(height: 10,),
-          Text(stepDescription,
-          style: const TextStyle(
-            color: Color(0xff4A525A),
-            fontSize: 18,
-            fontWeight: FontWeight.w400,
-            fontFamily: 'Montserrat',
-          ),),
+          Text(
+            stepNumber,
+            style: const TextStyle(
+              color: Color(0xff4A525A),
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Montserrat',
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            stepDescription,
+            style: const TextStyle(
+              color: Color(0xff4A525A),
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Montserrat',
+            ),
+          ),
         ],
       ),
     );
