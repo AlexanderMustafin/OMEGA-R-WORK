@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_book_figma/pages/favorite_empty_page.dart';
 import 'package:recipe_book_figma/pages/favorite_page.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.orange),
       debugShowCheckedModeBanner: false,
       initialRoute: '/main',

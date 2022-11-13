@@ -14,7 +14,7 @@ class FavoritePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Container(
-          margin: const EdgeInsets.only(left: 228),
+          margin: const EdgeInsets.only(left: 35),
           width: 1440,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +94,7 @@ class FavoritePage extends StatelessWidget {
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(
-              right: 350,
+              right: 200,
               top: 6,
             ),
             child: Row(

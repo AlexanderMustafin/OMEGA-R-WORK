@@ -14,7 +14,7 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Container(
-          margin: const EdgeInsets.only(left: 228),
+          margin: const EdgeInsets.only(left: 35),
           width: 1440,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +94,7 @@ class ProfilePage extends StatelessWidget {
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(
-              right: 350,
+              right: 200,
               top: 6,
             ),
             child: Row(
@@ -135,7 +135,7 @@ class ProfilePage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 54,
                           ),
                           TextButton(
@@ -259,6 +259,7 @@ class ProfilePage extends StatelessWidget {
                                   ),
                                 ),
                                 Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
                                       margin: EdgeInsets.fromLTRB(0, 23, 23, 0),

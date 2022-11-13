@@ -32,7 +32,7 @@ class MainPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Container(
-            margin: const EdgeInsets.only(left: 228),
+            margin: const EdgeInsets.only(left: 35),
             width: 1440,
             child: Row(
               children: [
@@ -104,7 +104,7 @@ class MainPage extends StatelessWidget {
           actions: <Widget>[
             Padding(
               padding: const EdgeInsets.only(
-                right: 380,
+                right: 200,
                 top: 6,
               ),
               child: TextButton(
@@ -445,6 +445,9 @@ class MainPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 106,
                 ),
                 const BottomCustomAppBar(),
               ],
